@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Check if a file name is provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <filename>"
+    exit 1
+fi
+
+# Define the file name and path
+FILENAME=$1.cpp
+
+# Create the C++ template content
+CPP_CONTENT="// include section
+#include <iostream>
+//include section end
+
+//namespace section
+using namespace std;
+//namespace section end
+
+//variables section
+int x = 4;
+//variables section end
+
+//functions section
+
+//functions section end
+
+//main function section
+int main() {
+
+    cout << \"hello world!\" << endl;
+
+    return 0;
+}
+//main function section end
+"
+
+# Create the file with the C++ template content
+echo "$CPP_CONTENT" > "$FILENAME"
+
+# Provide feedback to the user
+echo "Created $FILENAME with C++ template."
